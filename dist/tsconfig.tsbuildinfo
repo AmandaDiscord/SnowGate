@@ -454,7 +454,7 @@
         "signature": "773d135a3bc375aa4e0c984e1b1167536fa0360749ef8c230433a56d64bc434a"
       },
       "../src/routes/channels.ts": {
-        "version": "a86f122994ee3402df7bb7423eba9db16b85811762d802ae88ab2fd5e58b5a78",
+        "version": "8e5a386dfe1bdb50079126f161b7954de654c86783c95dd82ab34b991e1f6851",
         "signature": "90e942d4e212adb2bf60bf42d8e1f4d7acf9ce60633e94f5fb3a251bf08125e7"
       },
       "../src/routes/emojis.ts": {
@@ -482,7 +482,7 @@
         "signature": "90e942d4e212adb2bf60bf42d8e1f4d7acf9ce60633e94f5fb3a251bf08125e7"
       },
       "../src/index.ts": {
-        "version": "08cda8a3a4d113c8e6f5788fc5125cd6c6242a53e2250900f441ae29d285251d",
+        "version": "f6c01d5e2f648b20de7a8ff0d316ba3a0435a9844769ff00f9a48d463ff0f6af",
         "signature": "a848be4ed7be2ad1d24e184f932c6c532375dc2ebb5280bd5905f6ed38142567"
       },
       "../src/routes/audit-logs.ts": {
@@ -1273,7 +1273,6 @@
       "../src/utils.ts",
       "../src/routes/bots.ts",
       "../node_modules/@types/multer/index.d.ts",
-      "../src/routes/channels.ts",
       "../src/routes/emojis.ts",
       "../src/routes/guilds.ts",
       "../src/routes/invites.ts",
@@ -1281,6 +1280,7 @@
       "../src/routes/voice.ts",
       "../src/routes/webhook.ts",
       "../src/routes/audit-logs.ts",
+      "../src/routes/channels.ts",
       "../src/index.ts"
     ]
   },

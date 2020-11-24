@@ -48,15 +48,15 @@ router.post("/channels/:id/messages", upload.single("file"), async (req, res) =>
 });
 // Create Reaction
 router.put("/channels/:id/messages/:message_id/reactions/:emoji/@me", async (req, res) => {
-	return utils.wrapRequest(passthrough.rest, "channel", "createReaction", res, req.params.id, req.params.message_id, req.params.emoji);
+	return utils.wrapRequest(passthrough.rest, "channel", "createReaction", res, req.params.id, req.params.message_id, encodeURIComponent(req.params.emoji));
 });
 // Delete Reaction
 router.delete("/channels/:id/messages/:message_id/reactions/:emoji/:user_id", async (req, res) => {
-	return utils.wrapRequest(passthrough.rest, "channel", "deleteReaction", res, req.params.id, req.params.message_id, req.params.emoji, req.params.user_id);
+	return utils.wrapRequest(passthrough.rest, "channel", "deleteReaction", res, req.params.id, req.params.message_id, encodeURIComponent(req.params.emoji), req.params.user_id);
 });
 // Get Reactions
 router.get("/channels/:id/messages/:message_id/reactions/:emoji", async (req, res) => {
-	return utils.wrapRequest(passthrough.rest, "channel", "getReactions", res, req.params.id, req.params.message_id, req.params.emoji);
+	return utils.wrapRequest(passthrough.rest, "channel", "getReactions", res, req.params.id, req.params.message_id, encodeURIComponent(req.params.emoji));
 });
 // Delete All Reactions
 router.delete("/channels/:id/messages/:message_id/reactions", async (req, res) => {

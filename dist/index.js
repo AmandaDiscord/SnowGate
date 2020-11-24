@@ -32,6 +32,11 @@ class SnowGate {
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: true }));
         this.app.use((req, res, next) => {
+            var _a;
+            if (!req.headers.authorization)
+                return res.status(404).send(JSON.stringify({ message: "404: Not found", code: 0 }));
+            else if (!((_a = req.headers.authorization) === null || _a === void 0 ? void 0 : _a.includes(this.config.token)))
+                return res.status(404).send(JSON.stringify({ message: "404:Not found", code: 0 }));
             if (req.headers["X-Audit-Log-Reason"]) {
                 if (req.method === "GET" || req.path.includes("/bans") || req.path.includes("/prune")) {
                     req.query.reason = req.headers["X-Audit-Log-Reason"];

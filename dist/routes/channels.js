@@ -42,13 +42,13 @@ router.post("/channels/:id/messages", upload.single("file"), async (req, res) =>
     return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "createMessage", res, req.params.id, body);
 });
 router.put("/channels/:id/messages/:message_id/reactions/:emoji/@me", async (req, res) => {
-    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "createReaction", res, req.params.id, req.params.message_id, req.params.emoji);
+    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "createReaction", res, req.params.id, req.params.message_id, encodeURIComponent(req.params.emoji));
 });
 router.delete("/channels/:id/messages/:message_id/reactions/:emoji/:user_id", async (req, res) => {
-    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "deleteReaction", res, req.params.id, req.params.message_id, req.params.emoji, req.params.user_id);
+    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "deleteReaction", res, req.params.id, req.params.message_id, encodeURIComponent(req.params.emoji), req.params.user_id);
 });
 router.get("/channels/:id/messages/:message_id/reactions/:emoji", async (req, res) => {
-    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "getReactions", res, req.params.id, req.params.message_id, req.params.emoji);
+    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "getReactions", res, req.params.id, req.params.message_id, encodeURIComponent(req.params.emoji));
 });
 router.delete("/channels/:id/messages/:message_id/reactions", async (req, res) => {
     return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "deleteAllReactions", res, req.params.id, req.params.message_id);
