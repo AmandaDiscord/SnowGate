@@ -1,7 +1,15 @@
 {
-  "extends": "standard",
+  "extends": [
+    "standard",
+    "plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     "no-var": "error",
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-tabs": "off",
+    "indent": ["error", "tab", { "flatTernaryExpressions": true }]
   }
 }
