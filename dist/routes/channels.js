@@ -21,7 +21,7 @@ router.get("/channels/:id/messages", async (req, res) => {
     return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "getChannelMessages", res, req.params.id, req.query);
 });
 router.get("/channels/:id/messages/:message_id", async (req, res) => {
-    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "getChannelMessages", res, req.params.id, req.params.message_id);
+    return utils_1.default.wrapRequest(passthrough_1.default.rest, "channel", "getChannelMessage", res, req.params.id, req.params.message_id);
 });
 router.post("/channels/:id/messages", upload.single("file"), async (req, res) => {
     let body = req.body;
